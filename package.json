@@ -1,0 +1,27 @@
+{
+  "name": "set.up",
+  "version": "0.0.0",
+  "description": "sets, upgraded",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --harmony test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/calvinmetcalf/set.up.git"
+  },
+  "keywords": [
+    "set"
+  ],
+  "author": "Calvin Metcalf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/set.up/issues"
+  },
+  "homepage": "https://github.com/calvinmetcalf/set.up",
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.16.1",
+    "istanbul": "~0.2.1"
+  }
+}
