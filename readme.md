@@ -3,7 +3,7 @@ Set Up
 
 Extends Set.prototype with some new methods, probably don't want to extend the actual prototype in the wild but but my attempt at making a SetUp object which extends Set died in a flurry of errors related to using methods on objects they aren't allowed to be used on. Currently only works in firefox.
 
-map
+api
 ====
 
 `Set.prototype.map` takes 2 values, a function and a context, creates a new set and iterates over your set adding the new values to the new set, function is called with an optional context value.
