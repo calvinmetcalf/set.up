@@ -11,3 +11,7 @@ map
 `Set.prototype.equals` takes another set, returns true if they are the same length the other set has all the same values as this set.
 
 `Set.prototype.filter` returns a new filtered set.
+
+`Set.prototype.reduce` takes a function and calls it with accumulator, value, for each value. Second argument is the accumulator.
+
+`Set.prototype.some` and `Set.prototype.every` just like the array versions but doesn't call the function with the index.

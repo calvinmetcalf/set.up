@@ -2,11 +2,12 @@
 
 Set.prototype.map = function(func, context){
   const output = new Set();
+  const boundFunc = func.bind(context);
   for(let value of this){
-    output.add(func.call(context,value,this));
+    output.add(boundFunc(value,this));
   }
   return output;
-}
+};
 
 Set.prototype.equals = function(set){
   if(this.size !== set.size){
@@ -18,22 +19,46 @@ Set.prototype.equals = function(set){
     }
   }
   return true;
-}
+};
 
-Set.prototype.filter = function(func){
+Set.prototype.filter = function(func, context){
   const output = new Set();
+  const boundFunc = func.bind(context);
   for(let value of this){
-    if(func(value)){
+    if(boundFunc(value, this)){
       output.add(value);
     }
   }
   return output;
-}
+};
 
-Set.prototype.reduce = function(func){
-  let accum;
+Set.prototype.reduce = function(func, accum){
+  const boundFunc = func.bind(undefined);
   for(let value of this){
-    accum = func(accum, value);
+    if(typeof accum === 'undefined'){
+      accum = value;
+    }else{
+      accum = boundFunc(accum, value, this);
+    }
   }
   return accum;
-}
+};
+
+Set.prototype.every = function(func, context){
+  const boundFunc = func.bind(context);
+  for(let value of this){
+    if(!boundFunc(value, this)){
+      return false;
+    }
+  }
+  return true;
+};
+Set.prototype.some = function(func, context){
+  const boundFunc = func.bind(context);
+  for(let value of this){
+    if(boundFunc(value, this)){
+      return true;
+    }
+  }
+  return false;
+};

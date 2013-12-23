@@ -41,4 +41,30 @@ describe('SetUp',function(){
       return a+b;
     }).should.equal(6);
   });
+  it('should have a reduce method which takes an accumulator', function(){
+    var set = new Set([1,2,3]);
+    set.reduce(function(a, b){
+      return a+b;
+    },2).should.equal(8);
+  });
+  it('should have an every method', function(){
+    var set = new Set([1,2,3]);
+    set.every(function(v){
+      return v<4;
+    }).should.equal(true);
+    var set = new Set([1,2,3]);
+    set.every(function(v){
+      return v<3;
+    }).should.equal(false);
+  });
+  it('should have a some method', function(){
+    var set = new Set([1,2,3]);
+    set.some(function(v){
+      return v<3;
+    }).should.equal(true);
+    var set = new Set([1,2,3]);
+    set.some(function(v){
+      return v>3;
+    }).should.equal(false);
+  });
 });
