@@ -67,4 +67,33 @@ describe('SetUp',function(){
       return v>3;
     }).should.equal(false);
   });
+  it('should have a merge method', function(){
+    var set1 = new Set([1,2,3]);
+    var set2 = new Set([2,4,5]);
+    var set3 = new Set([4,5,6]);
+    var set4 = set1.merge(set2,set3);
+    set4.size.should.equal(6);
+    set4.has(1).should.equal(true);
+    set4.has(2).should.equal(true);
+    set4.has(3).should.equal(true);
+    set4.has(4).should.equal(true);
+    set4.has(5).should.equal(true);
+    set4.has(6).should.equal(true);
+    set4.has(7).should.equal(false);
+    set1.size.should.equal(3);
+  });
+   it('should have an append method', function(){
+    var set1 = new Set([1,2,3]);
+    var set2 = new Set([2,4,5]);
+    var set3 = new Set([4,5,6]);
+    set1.append(set2,set3);
+    set1.size.should.equal(6);
+    set1.has(1).should.equal(true);
+    set1.has(2).should.equal(true);
+    set1.has(3).should.equal(true);
+    set1.has(4).should.equal(true);
+    set1.has(5).should.equal(true);
+    set1.has(6).should.equal(true);
+    set1.has(7).should.equal(false);
+  });
 });
