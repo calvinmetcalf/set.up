@@ -82,11 +82,7 @@ Set.prototype.append = function(...args){
 }
 
 Set.prototype.toArray = function(sortFunc){
-  const out = new Array(this.size);
-  let i = 0;
-  for(let value of this){
-    out[i++] = value;
-  }
+  const out = [value for(value of this)];
   out.sort(sortFunc);
   return out;
 }

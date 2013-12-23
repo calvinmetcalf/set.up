@@ -20,7 +20,7 @@ these are all identical to their version on array, the only differences being th
 new stuff
 -------
 
-`Set.prototype.equals` takes another set, returns true if they are the same length and the other set has all the same values as this set.
+`Set.prototype.equals` takes another set, returns true if they are the same size and the other set has all the same values as this set.
 
 `Set.prototype.merge` takes one or more sets as arguments, returns a new set which merges those sets to this one.
 
