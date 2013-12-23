@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "sets, upgraded",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha --harmony test/test.js"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/calvinmetcalf/set.up.git"

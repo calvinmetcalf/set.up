@@ -1,7 +1,7 @@
 Set Up
 ====
 
-Extends Set.prototype with some new methods, probably don't want to extend the actual prototype in production but who knows. Currently only works in firefox.
+Extends Set.prototype with some new methods, probably don't want to extend the actual prototype in the wild but but my attempt at making a SetUp object which extends Set died in a flurry of errors related to using methods on objects they aren't allowed to be used on. Currently only works in firefox.
 
 map
 ====

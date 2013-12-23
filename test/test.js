@@ -32,4 +32,13 @@ describe('SetUp',function(){
       return v%2;
     }).size.should.equal(2);
   });
+  it('should have a reduce method', function(){
+    var set = new Set([1,2,3]);
+    set.reduce(function(a, b){
+      if(!a){
+        return b;
+      }
+      return a+b;
+    }).should.equal(6);
+  });
 });
