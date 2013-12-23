@@ -65,7 +65,7 @@ Set.prototype.some = function(func, context){
 
 Set.prototype.merge = function(...args){
   const output = new Set(this);
-  args.forEach(function(set){
+  args.forEach((set)=>{
     for(let value of set){
       output.add(value);
     }
@@ -73,10 +73,20 @@ Set.prototype.merge = function(...args){
   return output;
 }
 Set.prototype.append = function(...args){
-  args.forEach(function(set){
+  args.forEach((set)=>{
     for(let value of set){
       this.add(value);
     }
-  },this);
+  });
   return this;
+}
+
+Set.prototype.toArray = function(sortFunc){
+  const out = new Array(this.size);
+  let i = 0;
+  for(let value of this){
+    out[i++] = value;
+  }
+  out.sort(sortFunc);
+  return out;
 }

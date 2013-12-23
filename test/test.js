@@ -96,4 +96,17 @@ describe('SetUp',function(){
     set1.has(6).should.equal(true);
     set1.has(7).should.equal(false);
   });
+   it('should have a toArray method', function(){
+    var set1 = new Set([1,2,3,4,5,6,7]);
+    var set2 = new Set([7,6,5,4,2,1]);
+    set2.add(3);
+    set1.toArray().should.deep.equal(set2.toArray());
+   });
+   it('should have a toArray method which takes sort',function(){
+     var set1 = new Set([1,2,3,4,5,6,7,8,9,10,11]);
+     set1.toArray().should.deep.equal([1,10,11,2,3,4,5,6,7,8,9]);
+     set1.toArray(function(a,b){
+      return a - b;
+     }).should.deep.equal([1,2,3,4,5,6,7,8,9,10,11]);
+   });
 });
