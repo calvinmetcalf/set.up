@@ -1,9 +1,9 @@
-Set Up
+Collection tools
 ====
 
-Extends Set.prototype with some new methods, probably don't want to extend the actual prototype in the wild but but my attempt at making a SetUp object which extends Set died in a flurry of errors related to using methods on objects they aren't allowed to be used on. Currently only works in firefox.
+Extends Set.prototype & Map.prototype with some new methods, probably don't want to extend the actual prototype in the wild but but my attempt at making a SetUp object which extends Set died in a flurry of errors related to using methods on objects they aren't allowed to be used on. Currently only works in firefox.
 
-api
+Set API
 ====
 
 stuff from Array.prototype
@@ -27,3 +27,18 @@ new stuff
 `Set.prototype.append` takes one or more sets as arguments, adds their values to the current set and returns it.
 
 `Set.prototype.toArray` returns the values of the set, results are sorted and it takes an optional sort function.
+
+Map API
+=====
+
+the same as the set stuff but every callback that took a value for set takes a value, key for Map
+
+- `Map.prototype.map` returns a set
+- `Map.prototype.filter` 
+- `Map.prototype.reduce` function called accumulator, value, key, map, if no accumulator is given as argument first VALUE is used
+- `Map.prototype.some`
+- `Map.prototype.every`
+- `Map.prototype.equals`
+- `Map.prototype.merge` if the value is already in the map it is not replaced
+- `Map.prototype.append` if the value is already in the map it is not replaced
+- `Map.prototype.toObject` turns it into an object, some of the keys may be stringified
