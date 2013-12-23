@@ -6,12 +6,18 @@ Extends Set.prototype with some new methods, probably don't want to extend the a
 api
 ====
 
-`Set.prototype.map` takes 2 values, a function and a context, creates a new set and iterates over your set adding the new values to the new set, function is called with an optional context value.
+stuff from Array.prototype
+------
 
-`Set.prototype.equals` takes another set, returns true if they are the same length the other set has all the same values as this set.
+these are all identical to their version on array, the only differences being the functions are not called with index as an argument and length is not cached at the beginning so values may be added during iteration.
 
-`Set.prototype.filter` returns a new filtered set.
+- `Set.prototype.map`
+- `Set.prototype.filter`
+- `Set.prototype.reduce`
+- `Set.prototype.some`
+- `Set.prototype.every`
 
-`Set.prototype.reduce` takes a function and calls it with accumulator, value, for each value. Second argument is the accumulator.
+new stuff
+-------
 
-`Set.prototype.some` and `Set.prototype.every` just like the array versions but doesn't call the function with the index.
+`Set.prototype.equals` takes another set, returns true if they are the same length and the other set has all the same values as this set.
