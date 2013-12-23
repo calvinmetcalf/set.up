@@ -63,24 +63,20 @@ Set.prototype.some = function(func, context){
   return false;
 };
 
-Set.prototype.merge = function(){
+Set.prototype.merge = function(...args){
   const output = new Set(this);
-  let i = -1;
-  const len = arguments.length;
-  while(++i < len){
-    for(let value of arguments[i]){
+  args.forEach(function(set){
+    for(let value of set){
       output.add(value);
     }
-  }
+  });
   return output;
 }
-Set.prototype.append = function(){
-  let i = -1;
-  const len = arguments.length;
-  while(++i < len){
-    for(let value of arguments[i]){
+Set.prototype.append = function(...args){
+  args.forEach(function(set){
+    for(let value of set){
       this.add(value);
     }
-  }
+  },this);
   return this;
 }
