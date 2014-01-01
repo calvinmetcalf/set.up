@@ -110,6 +110,24 @@ describe('Set',function(){
       return a - b;
      }).should.deep.equal([1,2,3,4,5,6,7,8,9,10,11]);
    });
+   it('should have a union method',function(){
+    var set1 = new Set([1,2,3]);
+    var set2 = new Set([3,4,5]);
+    var set3 = set1.union(set2);
+    set3.size.should.equal(1);
+    set3.has(3).should.equal(true);
+   });
+   it('should have an xor method',function(){
+    var set1 = new Set([1,2,3]);
+    var set2 = new Set([3,4,5]);
+    var set3 = set1.xor(set2);
+    set3.size.should.equal(4);
+    set3.has(3).should.equal(false);
+    set3.has(1).should.equal(true);
+    set3.has(2).should.equal(true);
+    set3.has(4).should.equal(true);
+    set3.has(5).should.equal(true);
+   });
 });
 mapUp.shim();
 describe('Map',function(){
