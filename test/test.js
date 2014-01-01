@@ -1,3 +1,4 @@
+setUp.shim();
 describe('Set',function(){
   it('should work', function(){
     var set = new Set([1,2,3]);
@@ -110,6 +111,7 @@ describe('Set',function(){
      }).should.deep.equal([1,2,3,4,5,6,7,8,9,10,11]);
    });
 });
+mapUp.shim();
 describe('Map',function(){
   it('should work', function(){
     var map = new Map([[1,'a'],[2,'b'],[3,'c']]);

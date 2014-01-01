@@ -1,7 +1,7 @@
 Collection tools
 ====
 
-Extends Set.prototype & Map.prototype with some new methods, probably don't want to extend the actual prototype in the wild but but my attempt at making a SetUp object which extends Set died in a flurry of errors related to using methods on objects they aren't allowed to be used on. Currently only works in firefox.
+Creates 2 new objects, setUp and mapUp, each with 2 methods, `setUp.shim()` and `mapUp.shim()` adds all of these to Set.prototype or Map.prototype (if they are not already there) while 'setUp._()` and `mapUp._()` add them prefixed with an underscore. Currently only works in firefox.
 
 Set API
 ====
