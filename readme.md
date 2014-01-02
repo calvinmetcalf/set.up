@@ -1,7 +1,7 @@
 Collection tools
 ====
 
-Creates 2 new objects, setUp and mapUp, each with 2 methods, `setUp.shim()` and `mapUp.shim()` adds all of these to Set.prototype or Map.prototype (if they are not already there) while 'setUp._()` and `mapUp._()` add them prefixed with an underscore. Currently only works in firefox.
+Creates 2 new objects, setUp and mapUp, each with 2 methods, `setUp.shim()` and `mapUp.shim()` adds all of these to Set.prototype or Map.prototype (if they are not already there) while `setUp._()` and `mapUp._()` add them prefixed with an underscore. Currently only works in firefox.
 
 Set API
 ====
